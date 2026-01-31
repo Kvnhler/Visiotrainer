@@ -1,0 +1,88 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:view="clr-namespace:VisioTrainer.View"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VisioTrainer.View.RankingClickedPage"
+             BackgroundColor="{StaticResource CardBackgroundColor}">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="20" RowSpacing="20">
+
+        <!-- Header (Title) -->
+        <VerticalStackLayout Grid.Row="0" Spacing="4">
+            <Label Text="Ranking"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   TextColor="{StaticResource HeaderText}" />
+            
+        </VerticalStackLayout>
+
+        <!-- Scrollbare List -->
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding RankingEntries}"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="Center"
+                        WidthRequest="350">
+
+            <CollectionView.Header>
+                <Grid ColumnDefinitions="Auto,*,Auto"
+                      Padding="8,4"
+                      Margin="0,0,0,8">
+                    <Label Text="Platz"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource HeaderText}"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           Grid.Column="0" />
+                    <Label Text="Name"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource HeaderText}"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           Grid.Column="1" />
+                    <Label Text="Punkte"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource HeaderText}"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="End"
+                           Grid.Column="2" />
+                </Grid>
+            </CollectionView.Header>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="8"
+                           Margin="0,4"
+                           CornerRadius="12"
+                           HasShadow="False"
+                           BorderColor="{StaticResource RowBorder}"
+                           BackgroundColor="{StaticResource Top3Background}">
+                        <Grid ColumnDefinitions="Auto,*,Auto">
+                            <Label Text="{Binding Rank}"
+                                   Grid.Column="0"
+                                   TextColor="{StaticResource RowText}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Label Text="{Binding UserName}"
+                                   Grid.Column="1"
+                                   TextColor="{StaticResource RowText}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Label Text="{Binding Score}"
+                                   Grid.Column="2"
+                                   TextColor="{StaticResource RowText}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="End" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Bottom navigation bar, fix am unteren Rand -->
+        <view:BottomBarView Grid.Row="2"
+                            VerticalOptions="End" />
+
+    </Grid>
+</ContentPage>

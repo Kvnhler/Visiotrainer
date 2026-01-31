@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:VisioTrainer.View"
+             x:Class="VisioTrainer.View.QuizClickedPage"
+             BackgroundColor="{StaticResource CardBackgroundColor}">
+    
+    <VerticalStackLayout Padding="20" Spacing="20" >
+
+        <!-- upper area: scrollable list with 3 Containers -->
+        <ScrollView>
+            <VerticalStackLayout Spacing="16">
+
+                <!-- Quiz 1 -->
+                <Frame CornerRadius="16"
+                       Padding="16"
+                       HasShadow="True">
+                    <HorizontalStackLayout Spacing="10"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Fill">
+
+                        <Label Text="Quiz 1: 1 Bild – 4 Diagnosen"
+                               FontSize="18"
+                               VerticalOptions="Center"
+                               HorizontalOptions="StartAndExpand" />
+
+                        <Button Text="Start"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End" 
+                                Clicked="OnePic4DiagButton_OnClicked"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <!-- Quiz 2 -->
+                <Frame CornerRadius="16"
+                       Padding="16"
+                       HasShadow="True">
+                    <HorizontalStackLayout Spacing="10"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Fill">
+
+                        <Label Text="Quiz 2: Benigne vs. maligne"
+                               FontSize="18"
+                               VerticalOptions="Center"
+                               HorizontalOptions="StartAndExpand" />
+
+                        <Button Text="Start"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End" 
+                                Clicked="BenigneVsMaligneButton_OnClicked"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <!-- Quiz 3 -->
+                <Frame CornerRadius="16"
+                       Padding="16"
+                       HasShadow="True">
+                    <HorizontalStackLayout Spacing="10"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Fill">
+
+                        <Label Text="Quiz 3: 5 Bilder – Fallvignette"
+                               FontSize="18"
+                               VerticalOptions="Center"
+                               HorizontalOptions="StartAndExpand" />
+
+                        <Button Text="Start"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End" 
+                                Clicked="FivePicsOneMaligneButton_OnClicked"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <view:BottomBarView VerticalOptions="End" />
+    </VerticalStackLayout>
+        
+</ContentPage>

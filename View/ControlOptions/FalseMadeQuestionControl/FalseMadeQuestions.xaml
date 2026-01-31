@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:VisioTrainer.View"
+             x:Class="VisioTrainer.View.FalseMadeQuestions"
+             BackgroundColor="{StaticResource CardBackgroundColor}">
+
+    <Grid RowDefinitions="Auto,*,Auto"
+          Padding="20"
+          RowSpacing="20">
+
+        <!-- Header -->
+        <VerticalStackLayout Grid.Row="0"
+                             Spacing="4">
+            <Label Text="Alle falsch beantworteten Fragen"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource TextPrimaryColor}"/>
+
+            <Label Text="Tippe auf „Ansehen“, um den Fall erneut zu betrachten."
+                   FontSize="13"
+                   TextColor="{StaticResource TextSecondaryColor}"/>
+
+            <!-- Small line separator -->
+            <BoxView HeightRequest="1"
+                     Margin="0,6,0,0"
+                     BackgroundColor="{StaticResource CardBorderColor}" />
+        </VerticalStackLayout>
+
+        <!-- scrollable View -->
+        <ScrollView Grid.Row="1">
+            <!-- Card for the dynamic list -->
+            <Grid Padding="12"
+                  BackgroundColor="{StaticResource CardBackgroundColor}"
+                  RowSpacing="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Add to dynamic list -->
+                <VerticalStackLayout x:Name="DynamicList"
+                                     Spacing="10" />
+            </Grid>
+        </ScrollView>
+
+        <!-- BottomBar -->
+        <view:BottomBarView Grid.Row="2"
+                            VerticalOptions="End" />
+    </Grid>
+</ContentPage>

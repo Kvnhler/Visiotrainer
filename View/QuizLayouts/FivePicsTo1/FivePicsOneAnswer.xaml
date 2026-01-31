@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VisioTrainer.View.QuizLayouts.FivePicsOneAnswer"
+             Title="FivePicsEachFourAnswers"
+             BackgroundColor="{StaticResource CardBackgroundColor}">
+
+    <!-- Root-Grid, damit das Overlay alles überdecken kann -->
+    <Grid>
+
+        <!-- scrollable Container -->
+        <ScrollView>
+            <VerticalStackLayout Padding="10" Spacing="10">
+
+                <!-- Grid with 5 pictures and radioButtons -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- upper left -->
+                    <Frame Grid.Row="0" Grid.Column="0" Padding="5" Margin="5" HasShadow="False" BorderColor="Gray">
+                        <VerticalStackLayout Spacing="5">
+                            <Image x:Name="Img0"
+                                   Aspect="AspectFit"
+                                   HeightRequest="120">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnImageTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <RadioButton x:Name="Rb0"
+                                         GroupName="LesionGroup"
+                                         Content="Diese Läsion ist maligne"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- upper right -->
+                    <Frame Grid.Row="0" Grid.Column="1" Padding="5" Margin="5" HasShadow="False" BorderColor="Gray">
+                        <VerticalStackLayout Spacing="5">
+                            <Image x:Name="Img1"
+                                   Aspect="AspectFit"
+                                   HeightRequest="120">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnImageTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <RadioButton x:Name="Rb1"
+                                         GroupName="LesionGroup"
+                                         Content="Diese Läsion ist maligne"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- middle left -->
+                    <Frame Grid.Row="1" Grid.Column="0" Padding="5" Margin="5" HasShadow="False" BorderColor="Gray">
+                        <VerticalStackLayout Spacing="5">
+                            <Image x:Name="Img2"
+                                   Aspect="AspectFit"
+                                   HeightRequest="120">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnImageTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <RadioButton x:Name="Rb2"
+                                         GroupName="LesionGroup"
+                                         Content="Diese Läsion ist maligne"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- middle right -->
+                    <Frame Grid.Row="1" Grid.Column="1" Padding="5" Margin="5" HasShadow="False" BorderColor="Gray">
+                        <VerticalStackLayout Spacing="5">
+                            <Image x:Name="Img3"
+                                   Aspect="AspectFit"
+                                   HeightRequest="120">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnImageTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <RadioButton x:Name="Rb3"
+                                         GroupName="LesionGroup"
+                                         Content="Diese Läsion ist maligne"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!--lower left-->
+                    <Frame Grid.Row="2" Grid.Column="0" Padding="5" Margin="5" HasShadow="False" BorderColor="Gray">
+                        <VerticalStackLayout Spacing="5">
+                            <Image x:Name="Img4"
+                                   Aspect="AspectFit"
+                                   HeightRequest="120">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnImageTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <RadioButton x:Name="Rb4"
+                                         GroupName="LesionGroup"
+                                         Content="Diese Läsion ist maligne"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </Grid>
+
+                <!-- submit button -->
+                <Button Text="Abgeben"
+                        Margin="0,20,0,0"
+                        Clicked="OnSubmitClicked"
+                        HorizontalOptions="Center"
+                        WidthRequest="200"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- OVERLAY: appears if one picture is clicked-->
+        <Grid x:Name="Overlay"
+              BackgroundColor="#80000000"
+              IsVisible="False"
+              HorizontalOptions="Fill"
+              VerticalOptions="Fill">
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnOverlayTapped"/>
+            </Grid.GestureRecognizers>
+
+            <Image x:Name="FullscreenImage"
+                   Aspect="AspectFit"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Margin="20"/>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VisioTrainer.View.RegisterPage"
+             BackgroundColor="{StaticResource CardBackgroundColor}">
+    
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="40" Spacing="20">
+
+            <!-- Benutzername -->
+            <Label Text="Benutzername:"
+                   FontSize="18" />
+            <Entry x:Name="UsernameEntry"
+                   Placeholder="Benutzernamen eingeben"
+                   FontSize="18" 
+                   ReturnType="Next"
+                   TextChanged="UsernameEntry_OnTextChanged"/>
+
+            <!-- Passwort -->
+            <Label Text="Passwort:"
+                   FontSize="18" />
+            <Entry x:Name="PasswordEntry"
+                   Placeholder="Passwort eingeben"
+                   IsPassword="True"
+                   FontSize="18" 
+                   ReturnType="Done"
+                   Completed="RegisterButton_OnClicked"/>
+            <Label x:Name="ErrorRegister" Text="Dieser Benutzername existiert bereits, bitte wähle einen anderen" Style="{StaticResource PrimaryErrorLabelStyle}"/>
+
+
+            <!-- Buttons unten -->
+            <HorizontalStackLayout Spacing="20" Margin="0,30,0,0">
+
+                <Button Text="Registrierung abschließen"
+                        BackgroundColor="#28A745"
+                        TextColor="White"
+                        FontSize="18"
+                        CornerRadius="10" 
+                        Clicked="RegisterButton_OnClicked"/>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

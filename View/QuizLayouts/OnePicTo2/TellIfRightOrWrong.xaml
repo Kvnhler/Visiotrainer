@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VisioTrainer.View.QuizLayouts.OnePicTo2.TellIfRightOrWrong"
+             BackgroundColor="{StaticResource CardBackgroundColor}">
+    
+        <!-- whole layout: left dermoscopy, right answerState -->
+        <Grid Padding="20"
+              ColumnDefinitions="*,*"
+              RowDefinitions="*">
+
+            <!-- left column: dermoscopy -->
+            <Image Grid.Column="0"
+                   x:Name="ExplainImage"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+
+            <VerticalStackLayout Grid.Column="1"
+                                 Spacing="16"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center">
+
+                <!-- shows given answer -->
+                <Label
+                    x:Name="AnswerState"
+                    FontSize="30"
+                />
+
+                <Label
+                    x:Name="Explaination"
+                />
+            
+                <Button
+                    Text="Weiter"
+                    Clicked="GoOnButton_OnClicked"
+                />
+
+            </VerticalStackLayout>
+
+        </Grid>
+</ContentPage>

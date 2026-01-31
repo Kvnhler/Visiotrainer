@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VisioTrainer.View.StartPage"
+             BackgroundColor="{StaticResource CardBackgroundColor}">
+        
+        <VerticalStackLayout Padding="40" Spacing="25" VerticalOptions="Center">
+
+        <Button Text="Anmelden"
+                FontSize="20"
+                CornerRadius="10"
+                TextColor="White"
+                Clicked="LoginButton_OnClicked"/>
+
+        <Button Text="Registrieren"
+                FontSize="20"
+                CornerRadius="10"
+                TextColor="White"
+                Clicked="RegisterButton_OnClicked"/>
+
+        <Button Text="Spiel beenden"
+                FontSize="20"
+                CornerRadius="10"
+                BackgroundColor="#D9534F"
+                TextColor="White"
+                Clicked="ExitGameButton_OnClicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

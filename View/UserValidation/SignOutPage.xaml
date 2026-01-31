@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VisioTrainer.View.UserValidation.SignOutPage"
+             BackgroundColor="{StaticResource CardBackgroundColor}">
+    
+        <VerticalStackLayout Padding="40" Spacing="25" VerticalOptions="Center">
+
+        <Button Text="Abmelden"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                Clicked="SignOutButton_OnClicked"/>
+        
+        <Button Text="Zurück"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                Clicked="GoBackToMainMenuButton_OnClicked" />
+        
+        <Button Text="Anwendung Beenden"
+                BackgroundColor="Crimson"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                Clicked="QuitGameButton_OnClicked" />
+
+    </VerticalStackLayout>
+</ContentPage>
