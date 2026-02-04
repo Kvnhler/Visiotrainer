@@ -18,11 +18,13 @@ Entwickelt mit **.NET MAUI** für Cross-Plattform-Performance und einer **MySQL*
 - Architektur: MVVM (Model-View-ViewModel) – falls du das genutzt hast, unbedingt erwähnen!
 
 ## Demo
-[Hier ziehst du später dein Video per Drag-and-Drop rein!]
+
+https://github.com/user-attachments/assets/84518f7b-f4f4-4dc3-a79d-86b3b3e8a077
 
 ## Installation & Setup
 
 ---
 **Entwickelt von Kevin Hiller**
+
 
 Mit dem Fokus auf Präzision, Logik und saubere Backend-Strukturen.
