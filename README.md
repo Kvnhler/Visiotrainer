@@ -14,17 +14,20 @@ Entwickelt mit **.NET MAUI** für Cross-Plattform-Performance und einer **MySQL*
 ## Tech Stack
 - Frontend: .NET MAUI (XAML / C#)
 - Backend: C# / .NET
-- Datenbank: MySQL
+- Datenbank: MySQL (Lokal)
 - Architektur: MVVM (Model-View-ViewModel) – falls du das genutzt hast, unbedingt erwähnen!
 
 ## Demo
 
 https://github.com/user-attachments/assets/84518f7b-f4f4-4dc3-a79d-86b3b3e8a077
 
-## Installation & Setup
+## Projekt-Status & Einsicht
+Da der Visiotrainer ein Projekt aus meiner Entwicklungsphase ist, ist er aktuell für die lokale Ausführung mit einer spezifischen Datenbank-Infrastruktur konfiguriert.
 
----
+Fokus der Veröffentlichung: Dieses Repository dient dazu, meine Arbeitsweise mit .NET MAUI, die Architektur unter .NET 9 zu präsentieren.
+
+Einblick via Demo: Da eine externe Installation aufgrund der lokalen Datenbank-Anbindung nicht ohne Weiteres möglich ist, habe ich oben ein Demo-Video bereitgestellt.
+
+Was das Video zeigt: Es gibt einen kompakten Überblick über die Benutzeroberfläche und den generellen Ablauf der App, damit man einen direkten Eindruck user Experience bekommt.
+
 **Entwickelt von Kevin Hiller**
-
-
-Mit dem Fokus auf Präzision, Logik und saubere Backend-Strukturen.
